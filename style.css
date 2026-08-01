@@ -1,0 +1,383 @@
+/* Google Font is imported from index.html */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
+    color:white;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.glass{
+    width:90%;
+    max-width:850px;
+    padding:50px;
+    border-radius:25px;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.3);
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+    text-align:center;
+    animation:fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+.main-title,
+.question-title{
+    font-family:'Great Vibes', cursive;
+    font-size:4rem;
+    text-align:center;
+}
+
+h1{
+    font-family:'Great Vibes',cursive;
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+h2{
+    font-size:1.6rem;
+    font-weight:400;
+    margin-bottom:20px;
+}
+
+h3{
+    font-family:'Great Vibes',cursive;
+    font-size:3rem;
+    color:#fff5f5;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:1.15rem;
+    line-height:2;
+    margin-bottom:18px;
+}
+
+button{
+    margin-top:30px;
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:1rem;
+    font-weight:600;
+    color:white;
+    background:linear-gradient(45deg,#ff4b8b,#ff758c);
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(255,105,180,.4);
+}
+
+button:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 15px 35px rgba(255,105,180,.6);
+}
+
+#letter{
+    display:none;
+}
+
+#typing{
+    margin-top:20px;
+}
+
+#typing p{
+    animation:fadeText .8s ease forwards;
+}
+
+@keyframes fadeText{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+/* Floating Hearts */
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.heart{
+    position:absolute;
+    color:white;
+    animation:float linear infinite;
+    opacity:.7;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(100vh) scale(.5);
+        opacity:0;
+    }
+
+    20%{
+        opacity:.8;
+    }
+
+    100%{
+        transform:translateY(-10vh) scale(1.4);
+        opacity:0;
+    }
+
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:2.8rem;
+    }
+
+    h2{
+        font-size:1.2rem;
+    }
+
+    h3{
+        font-size:2.2rem;
+    }
+
+    p{
+        font-size:1rem;
+    }
+
+    .glass{
+        padding:30px;
+    }
+
+    button{
+        width:100%;
+    }
+
+}
+
+/* ===========================
+   Romantic Image Styling
+=========================== */
+
+.photo-container{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin:25px 0;
+
+}
+
+.photo{
+
+    width:260px;
+    /* height:260px; */
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    border:6px solid rgba(255,255,255,.6);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+    transition:.5s;
+
+}
+
+.photo:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ========================= */
+
+.buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+margin-top:35px;
+
+}
+
+/* .choiceButtons{
+
+margin-top:40px;
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+position:relative;
+
+height:120px;
+
+} */
+
+/* .choiceButtons{
+    position:relative;
+    width:100%;
+    height:220px;
+    margin-top:40px;
+}
+
+#yesBtn{
+    position:absolute;
+    left:50%;
+    top:30px;
+    transform:translateX(-50%);
+}
+
+#noBtn{
+    position:absolute;
+    left:50%;
+    top:120px;
+    transform:translateX(-50%);
+    transition:all .25s ease;
+} */
+
+.choiceButtons{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    position:relative;
+    min-height:220px;
+    margin-top:40px;
+}
+
+#yesBtn{
+    position:relative;
+    z-index:2;
+}
+
+#noBtn{
+    position:absolute;
+    top:80px;
+    left:50%;
+    transform:translateX(-50%);
+    transition:0.25s ease;
+    z-index:3;
+}
+
+#questionPage{
+
+display:none;
+
+}
+
+#finalPage{
+
+display:none;
+
+}
+/* 
+#noBtn{
+
+position:absolute;
+
+right:50px;
+
+transition:.25s;
+
+} */
+
+#yesBtn{
+
+animation:pulse 1.5s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .photo{
+
+        width:200px;
+        /* height:200px; */
+
+    }
+
+    .girlfriend{
+
+        font-size: 3rem;
+
+    }
+
+    .main-title,
+    .question-title{
+
+        font-size:2rem;
+       
+        letter-spacing:0;
+    }
+
+}
