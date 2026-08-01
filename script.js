@@ -145,7 +145,7 @@ function moveNoButton(){
 
 function celebrate() {
 
-    const duration = 5000;
+    const duration = 2500;
     const end = Date.now() + duration;
 
     (function frame() {
